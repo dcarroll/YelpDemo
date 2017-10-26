@@ -8,6 +8,7 @@
     	this.hideSpinner(component);
 
         var objectType = component.get("v.sObjectName");
+        console.log(objectType);
         var searchTerm = component.find("searchTerm").get("v.value");
         if (!searchTerm) {
             searchTerm = component.get("v.defaultSearch");
@@ -19,6 +20,7 @@
                 "recordId": component.get("v.recordId"),
                 "objectType": objectType
             });
+            console.log("action:\n" + JSON.stringify(action.getParams(), null, 4));
         } else {
             var location = component.get("v.location");
             action = component.get("c.getListByLatLon");
